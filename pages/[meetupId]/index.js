@@ -33,7 +33,7 @@ export const getStaticPaths = async () => {
   client.close()
 
   return {
-    fallback: false, // indicates wheter you inserted all suported paths, false means you did, true means only some of the supported are listed
+    fallback: 'blocking', // indicates wheter you inserted all suported paths, false means you did, true means only some of the supported are listed
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
